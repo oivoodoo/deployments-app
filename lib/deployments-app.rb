@@ -5,9 +5,7 @@ require "deployments-app/version"
 require 'deployments-app/models/commit'
 require 'deployments-app/models/deployment_commit'
 require 'deployments-app/models/deployment'
-
-# Move this block to the configuration settings
-DataMapper.setup(:default, "mysql://root@localhost/deployments-app-#{ENV['RAILS_ENV'] || ENV['RACK_ENV']}")
+require 'deployments-app/models/project'
 
 module Deployments
   module App
