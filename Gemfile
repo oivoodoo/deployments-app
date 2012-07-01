@@ -6,10 +6,7 @@ gem 'sinatra'
 gem 'heroku'
 gem 'datamapper'
 gem 'uniquify', :git => "git@github.com:oivoodoo/uniquify.git"
-
-group :production do
-  gem 'data_mapper'
-end
+gem 'data_mapper'
 
 group :test do
   gem 'rspec'
