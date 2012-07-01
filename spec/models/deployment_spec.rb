@@ -11,14 +11,15 @@ describe Deployment do
   it { should validate_presence_of :commit_attributes }
   it { should have_many :commits }
 
+  it { should belong_to :project }
+
   context "on create" do
     let(:one) { attributes_for(:commit) }
     let(:two) { attributes_for(:commit) }
     let(:commit_attributes) { [one, two] }
 
     before do
-      @deployment = build(:deployment,
-        :commit_attributes => commit_attributes)
+      @deployment = build(:deployment, :commit_attributes => commit_attributes)
     end
 
     it "should generate commits by raw commit attributes values" do

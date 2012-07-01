@@ -22,11 +22,13 @@ module Deployments
         attr_accessor :commit_attributes
         validates_presence_of :commit_attributes
 
+        belongs_to :project
+
         has n, :commits, :through => Resource
 
-        after :save do
+        before :save do
           self.commit_attributes.each do |commit|
-            self.commits.create(commit)
+            self.commits << Commit.create(commit)
           end
         end
       end

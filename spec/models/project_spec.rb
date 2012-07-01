@@ -11,7 +11,7 @@ describe Project do
   it { should have_many(:deployments) }
 
   context "on create" do
-    let(:project) { build(:project) }
+    let(:project) { build(:project, :api_key => nil) }
 
     it "should generate uniq api key" do
       project.save

@@ -4,6 +4,7 @@ FactoryGirl.define do
     env "staging"
     host_name "staging.example.com"
     version "1.0.3"
+    project
   end
 end
 
