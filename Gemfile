@@ -4,15 +4,20 @@ gemspec
 
 gem 'sinatra'
 gem 'heroku'
-gem 'activerecord'
+gem 'datamapper'
+
+group :production do
+  gem 'data_mapper'
+end
 
 group :test do
   gem 'rspec'
-  gem 'guard'
   gem 'ruby_gntp'
   gem 'factory_girl'
   gem 'shoulda'
   gem 'guard-rspec'
   gem 'debugger'
+  gem 'dm-rspec'
+  gem 'dm-mysql-adapter'
 end
 

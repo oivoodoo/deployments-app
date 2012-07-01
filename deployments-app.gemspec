@@ -15,7 +15,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Deployments::App::VERSION
 
-  gem.add_dependency('activerecord')
   gem.add_dependency('sinatra')
 end
 
