@@ -4,8 +4,8 @@ require File.expand_path('../lib/deployments-app/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Alexandr Korsak"]
   gem.email         = ["alex.korsak@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{deployments - app it's a sinatra application, you can run it as standalone app on the heroku or attach to the existing rails application.}
+  gem.summary       = %q{deployments - app it's a sinatra application, you can run it as standalone app on the heroku or attach to the existing rails application.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
