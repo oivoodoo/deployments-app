@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "deployments-app"
   gem.require_paths = ["lib"]
   gem.version       = Deployments::App::VERSION
+
+  gem.add_dependency('active_record')
+  gem.add_dependency('sinatra')
 end
