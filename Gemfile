@@ -4,7 +4,7 @@ gemspec
 
 gem 'sinatra'
 gem 'heroku'
-gem 'active_record'
+gem 'activerecord'
 
 group :test do
   gem 'rspec'
