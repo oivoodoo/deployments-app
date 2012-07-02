@@ -14,8 +14,12 @@ group :test do
   gem 'factory_girl'
   gem 'shoulda'
   gem 'guard-rspec'
-  gem 'debugger'
+  gem 'rack-test'
   gem 'dm-rspec'
   gem 'dm-mysql-adapter'
+end
+
+group :development do
+  gem 'debugger'
 end
 
