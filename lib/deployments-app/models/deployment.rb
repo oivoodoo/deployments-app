@@ -28,7 +28,7 @@ module Deployments
 
         before :save do
           self.commit_attributes.each do |commit|
-            self.commits << Commit.create(commit)
+            self.commits << Commit.find_by_sha_or_create(commit)
           end
         end
       end

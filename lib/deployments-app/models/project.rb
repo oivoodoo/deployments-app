@@ -13,9 +13,9 @@ module Deployments
         validates_presence_of :name
 
         property :api_key, String, :required => true
+        uniquify :api_key
         validates_presence_of :api_key
         validates_uniqueness_of :api_key
-        uniquify :api_key
 
         has n, :deployments
       end

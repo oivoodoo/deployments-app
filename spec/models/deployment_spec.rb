@@ -19,7 +19,8 @@ describe Deployment do
     let(:commit_attributes) { [one, two] }
 
     before do
-      @deployment = build(:deployment, :commit_attributes => commit_attributes)
+      @deployment = build(:deployment,
+                          :commit_attributes => commit_attributes)
     end
 
     it "should generate commits by raw commit attributes values" do
@@ -31,7 +32,23 @@ describe Deployment do
     it "should connect just created commits with deployment" do
       @deployment.save
 
-      @deployment.reload.commits.all.size.should == 2
+      @deployment.reload.commits.count.should == 2
+    end
+
+    context "with existing commit" do
+      let!(:commit) { create(:commit, :sha => one[:sha]) }
+
+      it "should not create new one commit by commit attributes" do
+        @deployment.save
+
+        @deployment.reload.commits.count.should == 2
+      end
+
+      it "should have existing commit in relation" do
+        @deployment.save
+
+        @deployment.reload.commits.should include(commit)
+      end
     end
   end
 end

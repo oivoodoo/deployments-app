@@ -16,6 +16,14 @@ module Deployments
         validates_presence_of :created_at
 
         has n, :deployments, :through => Resource
+
+        def self.find_by_sha_or_create(commit)
+          existing = first(:sha => commit[:sha])
+
+          return Commit.create(commit) unless existing
+
+          existing
+        end
       end
     end
   end
