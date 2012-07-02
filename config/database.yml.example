@@ -1,0 +1,6 @@
+test:
+  username: root
+  password:
+  database: deployments-app-test
+  host: localhost
+

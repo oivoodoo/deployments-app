@@ -2,27 +2,13 @@ ENV['RACK_ENV'] ||= 'test'
 
 require 'rubygems'
 require 'deployments-app'
-
 require 'factory_girl'
+require 'dm-rspec'
 
 Dir[File.expand_path("./spec/factories/*.rb")].each {|f| require f}
 
-require 'dm-rspec'
-
-DataMapper.setup(:default, 'mysql://root@localhost/deployments')
-DataMapper.finalize
-DataMapper.auto_migrate!
-
-require 'rack/test'
-
-set :environment, :test
-set :run, false
-set :raise_errors, true
-set :logging, false
-
-def app
-  Sinatra::Application
-end
+require_relative 'support/data_mapper'
+require_relative 'support/rack_test'
 
 RSpec.configure do |config|
   config.include DataMapper::Matchers
