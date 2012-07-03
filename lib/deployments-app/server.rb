@@ -1,9 +1,8 @@
 module Deployments
   module App
     class Server < Sinatra::Base
-      get '/deployments' do
-        "Hello"
-      end
+      include Routes::Authentication
+      include Routes::Deployments
     end
   end
 end

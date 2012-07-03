@@ -7,6 +7,7 @@ gem 'heroku'
 gem 'datamapper'
 gem 'uniquify', :git => "git@github.com:oivoodoo/uniquify.git"
 gem 'data_mapper'
+gem 'haml'
 
 group :test do
   gem 'rspec'

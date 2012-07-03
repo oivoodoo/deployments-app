@@ -7,6 +7,8 @@ require 'deployments-app/models/commit'
 require 'deployments-app/models/deployment'
 require 'deployments-app/models/project'
 
+require 'deployments-app/routes/authentication'
+require 'deployments-app/routes/deployments'
 require 'deployments-app/server'
 
 module Deployments

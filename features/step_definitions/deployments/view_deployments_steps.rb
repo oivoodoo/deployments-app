@@ -6,8 +6,6 @@ end
 
 When /^I am on the deployments page$/ do
   visit '/deployments'
-
-  save_and_open_page
 end
 
 Then /^I should see deployments of (staging|production)$/ do |env|
