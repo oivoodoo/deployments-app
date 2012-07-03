@@ -3,9 +3,6 @@ Feature: View deployments
   As an User
   I want to be able to read deployment information for all releases
 
-  Background:
-    Given I have project
-
   Scenario: View deployments information of staging env
     Given I have already deployed project to the staging
 

@@ -1,24 +1,21 @@
-Given /^I have project$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given /^I have already deployed project to the staging$/ do
-  pending # express the regexp above with the code you wish you had
+Given /^I have already deployed project to the (staging|production)$/ do |env|
+  @deployment = build(:deployment, :env => env)
+  @deployment.commits << create(:commit)
+  @deployment.save
 end
 
 When /^I am on the deployments page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit '/deployments'
+
+  save_and_open_page
 end
 
-Then /^I should see deployments of staging$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given /^I have already deployed project to the production$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then /^I should see deployments of production$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^I should see deployments of (staging|production)$/ do |env|
+  within('#deployments') do
+    find('.env').should have_content(@deployment.env)
+    find('.host_name').should have_content(@deployment.host_name)
+    find('.author').should have_content(@deployment.author)
+    find('.version').should have_content(@deployment.version)
+  end
 end
 
