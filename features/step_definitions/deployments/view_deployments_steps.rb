@@ -1,11 +1,11 @@
 Given /^I have already deployed project to the (staging|production)$/ do |env|
-  @deployment = build(:deployment, :env => env)
+  @deployment = build(:deployment, :env => env, :project => @project)
   @deployment.commits << create(:commit)
   @deployment.save
 end
 
 When /^I am on the deployments page$/ do
-  visit '/deployments'
+  visit "/deployments?api_key=#{@project.api_key}"
 end
 
 Then /^I should see deployments of (staging|production)$/ do |env|
@@ -17,3 +17,6 @@ Then /^I should see deployments of (staging|production)$/ do |env|
   end
 end
 
+Given /^I have a project$/ do
+  @project = create(:project)
+end

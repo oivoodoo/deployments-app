@@ -8,7 +8,8 @@ require 'deployments-app/models/deployment'
 require 'deployments-app/models/project'
 
 require 'deployments-app/routes/authentication'
-require 'deployments-app/routes/deployments'
+require 'deployments-app/routes/root'
+require 'deployments-app/routes/extensions'
 require 'deployments-app/server'
 
 module Deployments

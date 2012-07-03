@@ -1,20 +1,14 @@
 module Deployments
   module App
     module Routes
-      module Authentication
-
+      class Authentication < Sinatra::Base
         include Deployments::App::Models
 
-        def self.included(base)
-          base.class_eval do
-            before '/deployments/*' do
-              @project = Project.first(:api_key => params["captures"].last)
+        before '/deployments' do
+          projects = Project.count(:api_key => params[:api_key])
 
-              halt 401 unless @project
-            end
-          end
+          return halt(401) if projects.zero?
         end
-
       end
     end
   end

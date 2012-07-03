@@ -1,8 +1,10 @@
 module Deployments
   module App
     class Server < Sinatra::Base
-      include Routes::Authentication
-      include Routes::Deployments
+      use Routes::Authentication
+      use Routes::Root
     end
+
+    Sinatra::Base.send(:include, Routes::Extensions)
   end
 end
