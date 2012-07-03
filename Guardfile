@@ -8,9 +8,10 @@ guard 'rspec', :cli => '--format documentation', :version => 2, :all_after_pass 
 end
 
 guard 'cucumber',:all_after_pass => false do
-  watch(%r{^views/.+\.haml$})               { 'features' }
+  watch(%r{^views/.+\.haml$})                       { 'features' }
+  watch(%r{^lib/deployments-app/views/.+\.haml$})   { 'features' }
   watch(%r{^features/.+\.feature$})
-  watch(%r{^features/support/.+$})          { 'features' }
+  watch(%r{^features/support/.+$})                  { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
 end
 

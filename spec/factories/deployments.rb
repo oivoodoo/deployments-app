@@ -6,5 +6,9 @@ FactoryGirl.define do
     version "1.0.3"
     project
   end
+
+  factory :deployment_with_commits, :parent => :deployment do
+    commit_attributes { [attributes_for(:commit), attributes_for(:commit)] }
+  end
 end
 

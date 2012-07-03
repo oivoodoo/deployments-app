@@ -1,2 +1,7 @@
 #deployments
+  - @deployments.each do |deployment|
+    .env= deployment.env
+    .host_name= deployment.host_name
+    .author= deployment.author
+    .version= deployment.version
 

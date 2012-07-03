@@ -1,6 +1,5 @@
 Given /^I have already deployed project to the (staging|production)$/ do |env|
-  @deployment = build(:deployment, :env => env, :project => @project)
-  @deployment.commits << create(:commit)
+  @deployment = build(:deployment_with_commits, :env => env, :project => @project)
   @deployment.save
 end
 
@@ -9,6 +8,8 @@ When /^I am on the deployments page$/ do
 end
 
 Then /^I should see deployments of (staging|production)$/ do |env|
+  save_and_open_page
+
   within('#deployments') do
     find('.env').should have_content(@deployment.env)
     find('.host_name').should have_content(@deployment.host_name)
@@ -20,3 +21,4 @@ end
 Given /^I have a project$/ do
   @project = create(:project)
 end
+

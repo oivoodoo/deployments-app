@@ -1,6 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require 'deployments-app'
+
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
