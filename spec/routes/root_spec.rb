@@ -23,7 +23,7 @@ describe Server do
 
     it { last_response.should be_ok }
 
-    it { require 'ruby-debug' ; debugger ; project.reload.deployments.should have(1).item }
+    it { project.reload.deployments.should have(1).item }
   end
 
   context "posting new deployment" do
