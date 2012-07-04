@@ -5,6 +5,7 @@ module Deployments
         include Deployments::App::Models
 
         set :views, File.expand_path(settings.root + "/../views/deployments")
+        set :haml, :layout => :"../layouts/application"
 
         get "/deployments" do
           @deployments = current_project.deployments

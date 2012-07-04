@@ -16,5 +16,9 @@ describe Server do
 
     it { last_response.should be_ok }
   end
+
+  context "posting new deployment" do
+    before { post "/deployments/" }
+  end
 end
 

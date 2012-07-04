@@ -22,6 +22,7 @@ group :test do
   gem 'rack-test'
   gem 'dm-rspec'
   gem 'dm-mysql-adapter'
+  gem 'database_cleaner'
 end
 
 group :development do
