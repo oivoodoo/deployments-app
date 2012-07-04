@@ -12,6 +12,12 @@ module Deployments
 
           haml :index
         end
+
+        post "/deployments" do
+          deployment = Deployment.new(params[:deployment])
+          deployment.project = current_project
+          deployment.save
+        end
       end
     end
   end

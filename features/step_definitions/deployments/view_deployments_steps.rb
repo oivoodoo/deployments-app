@@ -8,8 +8,6 @@ When /^I am on the deployments page$/ do
 end
 
 Then /^I should see deployments of (staging|production)$/ do |env|
-  save_and_open_page
-
   within("#deployments #deployments_app_models_deployment_#{@deployment.id}") do
     find('.env').should have_content(@deployment.env)
     find('.host_name').should have_content(@deployment.host_name)
