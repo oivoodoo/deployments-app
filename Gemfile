@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'sinatra'
-gem 'heroku'
 gem 'datamapper'
 gem 'uniquify', :git => "git@github.com:oivoodoo/uniquify.git"
 gem 'data_mapper'
@@ -27,5 +26,6 @@ end
 
 group :development do
   gem 'debugger'
+  gem 'heroku'
 end
 

@@ -16,5 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Deployments::App::VERSION
 
   gem.add_dependency('sinatra')
+  gem.add_dependency('datamapper')
+  gem.add_dependency('haml')
 end
 
