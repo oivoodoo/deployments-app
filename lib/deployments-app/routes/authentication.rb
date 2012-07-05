@@ -5,7 +5,7 @@ module Deployments
         include Deployments::App::Models
 
         before '/deployments' do
-          projects = Project.count(:api_key => params[:api_key])
+          projects = Project.all(:api_key => params[:api_key]).count
 
           return halt(401) if projects.zero?
         end
