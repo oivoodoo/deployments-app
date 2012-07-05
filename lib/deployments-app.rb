@@ -1,5 +1,14 @@
 require 'rubygems'
-require 'data_mapper'
+
+require 'dm-core'
+require 'dm-validations'
+require 'dm-migrations'
+require 'dm-transactions'
+require 'dm-serializer'
+require 'dm-timestamps'
+require 'dm-types'
+require 'dm-constraints'
+
 require 'sinatra'
 
 require "deployments-app/version"

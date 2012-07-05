@@ -5,7 +5,15 @@ gemspec
 gem 'sinatra'
 gem 'datamapper'
 gem 'uniquify', :git => "git@github.com:oivoodoo/uniquify.git"
-gem 'data_mapper'
+gem 'dm-core'
+gem 'dm-aggregates'
+gem 'dm-constraints'
+gem 'dm-migrations'
+gem 'dm-transactions'
+gem 'dm-serializer'
+gem 'dm-timestamps'
+gem 'dm-validations'
+gem 'dm-types'
 gem 'haml'
 
 group :test do
