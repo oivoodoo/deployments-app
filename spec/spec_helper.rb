@@ -1,6 +1,5 @@
 ENV['RACK_ENV'] ||= 'test'
 
-require 'rubygems'
 require 'deployments-app'
 require 'factory_girl'
 require 'dm-rspec'
