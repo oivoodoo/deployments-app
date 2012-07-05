@@ -4,7 +4,7 @@ gemspec
 
 gem 'sinatra'
 gem 'datamapper'
-gem 'uniquify', :git => "git@github.com:oivoodoo/uniquify.git"
+gem 'uniquify', :git => "https://github.com/oivoodoo/uniquify.git"
 gem 'dm-core'
 gem 'dm-aggregates'
 gem 'dm-constraints'

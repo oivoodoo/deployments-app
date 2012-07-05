@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:oivoodoo/uniquify.git
+  remote: https://github.com/oivoodoo/uniquify.git
   revision: 6cd15d0f796327bdd74df20e3955c18f6afaaaf5
   specs:
     uniquify (0.1.0)
