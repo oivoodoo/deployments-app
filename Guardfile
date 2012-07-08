@@ -3,6 +3,7 @@ guard 'rspec', :cli => '--format documentation', :version => 2, :all_after_pass 
   watch(%r{^spec/.+\.rb$})
   watch(%r{^spec/factories/.+\.rb$})
   watch(%r{^lib/(.+)\.rb$})                         { "spec" }
+  watch(%r{^lib/deployments-app/routes/(.+)\.rb$}) { |m| Dir[File.join("lib/deployments-app/routes/#{m[1]}.rb")][0] || 'spec' }
   watch(%r{^lib/deployments-app/models/(.+)\.rb$})  { "spec/models/" }
   watch(%r{^lib/deployments-app/(.+)\.rb$})         { "spec" }
   watch('spec/spec_helper.rb')                      { "spec" }
