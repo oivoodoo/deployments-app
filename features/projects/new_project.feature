@@ -9,7 +9,6 @@ Feature: New project
   Scenario: New project
     When I fill all required fields
     And I save changes
-    And show me the page
       Then I should see new project in the list
 
   Scenario: Don't create with invalid fields

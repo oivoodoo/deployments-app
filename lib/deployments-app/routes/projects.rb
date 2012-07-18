@@ -20,6 +20,8 @@ module Deployments
         post '/projects' do
           @project = Project.new(params[:project])
           @project.save
+
+          get '/projects'
         end
       end
     end

@@ -11,11 +11,16 @@ When /^I save changes$/ do
 end
 
 Then /^I should see new project in the list$/ do
-  pending # express the regexp above with the code you wish you had
+  project = Deployments::App::Models::Project.last
+
+  within '#projects' do
+    find('.name').should have_content(project.name)
+    find('.api_key').should have_content(project.api_key)
+  end
 end
 
 When /^I don't fill one required field$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'Name', :with => ''
 end
 
 Then /^I should see error notification$/ do
