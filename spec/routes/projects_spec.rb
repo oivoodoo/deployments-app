@@ -19,7 +19,12 @@ describe Projects do
   context "on create new project" do
     before { post '/projects', :project => attributes_for(:project) }
 
-    it { last_response.should be_ok }
+    it "should rediect to the projects list" do
+      follow_redirect!
+
+      last_response.should be_ok
+    end
+
     it { Project.count.should == 1 }
   end
 end

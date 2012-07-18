@@ -21,7 +21,7 @@ module Deployments
           @project = Project.new(params[:project])
           @project.save
 
-          get '/projects'
+          redirect '/projects'
         end
       end
     end
