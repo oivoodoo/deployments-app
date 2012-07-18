@@ -15,6 +15,7 @@ gem 'dm-timestamps'
 gem 'dm-validations'
 gem 'dm-types'
 gem 'haml'
+gem 'deployments'
 
 group :test do
   gem 'rspec'

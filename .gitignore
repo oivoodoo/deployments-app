@@ -16,4 +16,5 @@ test/version_tmp
 tmp
 config/database.yml
 *.html
+config/*.yml
 

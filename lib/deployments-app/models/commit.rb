@@ -18,7 +18,9 @@ module Deployments
         has n, :deployments, :through => Resource
 
         def self.find_by_sha_or_create(commit)
-          existing = first(:sha => commit[:sha])
+          sha = commit[:sha]
+
+          existing = first(:sha => sha)
 
           return Commit.create(commit) unless existing
 
