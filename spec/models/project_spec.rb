@@ -5,18 +5,27 @@ include Deployments::App::Models
 describe Project do
   it { should validate_presence_of :name }
 
-  it { should validate_presence_of :api_key }
-  it { should validate_uniqueness_of :api_key }
-
   it { should have_many(:deployments) }
 
   context "on create" do
-    let(:project) { build(:project, :api_key => nil) }
+    let(:project) { create(:project) }
 
     it "should generate uniq api key" do
-      project.save
+      project.reload.api_key.should be
+    end
+  end
 
-      project.api_key.should be
+  context "on save" do
+    let!(:project) { create(:project) }
+
+    before { @api_key = project.api_key }
+
+    context "api key" do
+      before { project.save }
+
+      it "should be the same" do
+        project.reload.api_key.should == @api_key
+      end
     end
   end
 end

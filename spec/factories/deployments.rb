@@ -12,7 +12,12 @@ FactoryGirl.define do
   end
 
   factory :deployment_with_commits, :parent => :deployment do
-    commit_attributes { [attributes_for(:commit), attributes_for(:commit)] }
+    commit_attributes do
+      one = attributes_for(:commit, :sha => "one")
+      two = attributes_for(:commit, :sha => "two")
+
+      { one[:sha] => one, two[:sha] => two }
+    end
   end
 end
 

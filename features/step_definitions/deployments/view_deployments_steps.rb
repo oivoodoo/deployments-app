@@ -1,6 +1,5 @@
 Given /^I have already deployed project to the (staging|production)$/ do |env|
-  @deployment = build(:deployment_with_commits, :env => env, :project => @project)
-  @deployment.save
+  @deployment = create(:deployment_with_commits, :env => env, :project => @project)
 end
 
 When /^I am on the deployments page$/ do

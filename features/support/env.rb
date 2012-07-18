@@ -9,6 +9,7 @@ require 'factory_girl'
 
 Dir[File.join(File.dirname(__FILE__), "../../spec/factories/*.rb")].each {|f| require f}
 require File.join(File.dirname(__FILE__), '../../spec/support/data_mapper')
+require File.join(File.dirname(__FILE__), '../../spec/support/factory_girl')
 
 Capybara.app = Deployments::App::Server
 

@@ -14,41 +14,27 @@ describe Deployment do
   it { should belong_to :project }
 
   context "on create" do
-    let(:one) { attributes_for(:commit) }
-    let(:two) { attributes_for(:commit) }
-    let(:commit_attributes) { [one, two] }
-
-    before do
-      @deployment = build(:deployment,
-                          :commit_attributes => commit_attributes)
-    end
+    let!(:deployment) { create(:deployment_with_commits) }
 
     it "should generate commits by raw commit attributes values" do
-      @deployment.save
-
-      @deployment.reload.commits == Commit.all
+      deployment.reload.commits == Commit.all
     end
 
     it "should connect just created commits with deployment" do
-      @deployment.save
+      deployment.reload.commits.count.should == 2
+    end
+  end
 
-      @deployment.reload.commits.count.should == 2
+  context "with existing commit" do
+    let!(:commit) { create(:commit, :sha => "one") }
+    let!(:deployment) { create(:deployment_with_commits) }
+
+    it "should not create new one commit by commit attributes" do
+      deployment.reload.commits.count.should == 2
     end
 
-    context "with existing commit" do
-      let!(:commit) { create(:commit, :sha => one[:sha]) }
-
-      it "should not create new one commit by commit attributes" do
-        @deployment.save
-
-        @deployment.reload.commits.count.should == 2
-      end
-
-      it "should have existing commit in relation" do
-        @deployment.save
-
-        @deployment.reload.commits.should include(commit)
-      end
+    it "should have existing commit in relation" do
+      deployment.reload.commits.should include(commit)
     end
   end
 end

@@ -9,13 +9,11 @@ module Deployments
 
         property :id, Serial
 
-        property :name, String, :required => true
+        property :name, String
         validates_presence_of :name
 
-        property :api_key, String, :required => true
+        property :api_key, String
         uniquify :api_key
-        validates_presence_of :api_key
-        validates_uniqueness_of :api_key
 
         has n, :deployments
       end

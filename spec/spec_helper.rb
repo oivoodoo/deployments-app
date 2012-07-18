@@ -9,6 +9,7 @@ Dir[File.expand_path("./spec/factories/*.rb")].each {|f| require f}
 
 require_relative 'support/data_mapper'
 require_relative 'support/rack_test'
+require_relative 'support/factory_girl'
 
 RSpec.configure do |config|
   config.include DataMapper::Matchers
@@ -28,4 +29,3 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
-

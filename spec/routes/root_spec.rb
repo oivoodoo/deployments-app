@@ -30,7 +30,7 @@ describe Server do
     it "should create report" do
       expect {
         do_action(project.api_key)
-      }.should change { Deployment.count }.by(1)
+      }.to change { Deployment.count }.by(1)
     end
   end
 
@@ -38,7 +38,7 @@ describe Server do
     it "should not create report" do
       expect {
         do_action("wrong key")
-      }.should_not change { Deployment.count }.by(1)
+      }.to change { Deployment.count }.by(0)
     end
   end
 

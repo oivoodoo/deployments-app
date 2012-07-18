@@ -1,3 +1,4 @@
 DataMapper.setup(:default, 'sqlite::memory:')
-DataMapper.finalize.auto_migrate!
+DataMapper.finalize
+DataMapper.auto_migrate!
 
