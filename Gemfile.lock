@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/oivoodoo/uniquify.git
-  revision: 6cd15d0f796327bdd74df20e3955c18f6afaaaf5
+  revision: 5e5a91e2137ced5d0bfbe8a3b9dcaff606e1dd39
   specs:
     uniquify (0.1.0)
 
@@ -85,9 +85,6 @@ GEM
       dm-core (~> 1.2.0)
     dm-migrations (1.2.0)
       dm-core (~> 1.2.0)
-    dm-mysql-adapter (1.2.0)
-      dm-do-adapter (~> 1.2.0)
-      do_mysql (~> 0.10.6)
     dm-postgres-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_postgres (~> 0.10.6)
@@ -100,6 +97,9 @@ GEM
       json (~> 1.6.1)
       json_pure (~> 1.6.1)
       multi_json (~> 1.0.3)
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
     dm-timestamps (1.2.0)
       dm-core (~> 1.2.0)
     dm-transactions (1.2.0)
@@ -114,9 +114,9 @@ GEM
       uuidtools (~> 2.1.2)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
-    do_mysql (0.10.8)
-      data_objects (= 0.10.8)
     do_postgres (0.10.8)
+      data_objects (= 0.10.8)
+    do_sqlite3 (0.10.8)
       data_objects (= 0.10.8)
     excon (0.15.3)
     factory_girl (3.5.0)
@@ -234,10 +234,10 @@ DEPENDENCIES
   dm-constraints
   dm-core
   dm-migrations
-  dm-mysql-adapter
   dm-postgres-adapter
   dm-rspec
   dm-serializer
+  dm-sqlite-adapter
   dm-timestamps
   dm-transactions
   dm-types

@@ -29,7 +29,7 @@ group :test do
   gem 'guard-cucumber'
   gem 'rack-test'
   gem 'dm-rspec'
-  gem 'dm-mysql-adapter'
+  gem 'dm-sqlite-adapter'
   gem 'database_cleaner'
 end
 
