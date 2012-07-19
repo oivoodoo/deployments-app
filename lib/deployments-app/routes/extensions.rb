@@ -7,7 +7,7 @@ module Deployments
             include Deployments::App::Models
 
             def current_project
-              @project ||= Project.first(:api_key => params[:api_key])
+              @project ||= Deployments::App::Models::Project.first(:api_key => params[:api_key])
             end
           end
         end

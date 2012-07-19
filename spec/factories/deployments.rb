@@ -16,7 +16,10 @@ FactoryGirl.define do
       one = attributes_for(:commit, :sha => "one")
       two = attributes_for(:commit, :sha => "two")
 
-      { one[:sha] => one, two[:sha] => two }
+      one_sha = one.delete(:sha)
+      two_sha = two.delete(:sha)
+
+      { one_sha => one, two_sha => two }
     end
   end
 end

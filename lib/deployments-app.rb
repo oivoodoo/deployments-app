@@ -20,6 +20,7 @@ require 'deployments-app/routes/authentication'
 require 'deployments-app/routes/root'
 require 'deployments-app/routes/projects'
 require 'deployments-app/routes/extensions'
+
 require 'deployments-app/server'
 
 module Deployments
