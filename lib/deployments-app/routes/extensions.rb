@@ -2,15 +2,15 @@ module Deployments
   module App
     module Routes
       module Extensions
-
         def self.included(base)
           base.class_eval do
+            include Deployments::App::Models
+
             def current_project
-              @project ||= Deployments::App::Models::Project.first(:api_key => params[:api_key])
+              @project ||= Project.first(:api_key => params[:api_key])
             end
           end
         end
-
       end
     end
   end

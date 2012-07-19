@@ -2,8 +2,6 @@ module Deployments
   module App
     module Routes
       class Authentication < Sinatra::Base
-        include Deployments::App::Models
-
         before '/deployments' do
           projects = Project.all(:api_key => params[:api_key]).count
 
