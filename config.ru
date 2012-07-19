@@ -3,7 +3,7 @@ require 'sinatra'
 
 class Deployments::App::Server < Sinatra::Base
   configure do
-    DataMapper.setup(:default, ENV["DATABASE_URL"] || "mysql://root@localhost/deployments-app-development")
+    DataMapper.setup(:default, ENV["DATABASE_URL"] || 'sqlite::memory:')
     DataMapper.auto_upgrade!
   end
 end
