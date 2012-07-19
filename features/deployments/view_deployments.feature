@@ -11,6 +11,7 @@ Feature: View deployments
 
     When I am on the deployments page
       Then I should see deployments of staging
+      And I should see commits that was deployed to the staging
 
   Scenario: View deployments information of production env
     Given I have already deployed project to the staging
@@ -18,5 +19,7 @@ Feature: View deployments
 
     When I am on the deployments page
       Then I should see deployments of production
+      And I should see commits that was deployed to the production
       And I should see deployments of staging
+      And I should see commits that was deployed to the staging
 

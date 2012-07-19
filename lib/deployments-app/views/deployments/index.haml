@@ -6,3 +6,7 @@
       .author= deployment.author
       .version= deployment.version
 
+      .commits
+        - deployment.commits.each do |commit|
+          .message= commit.message
+
