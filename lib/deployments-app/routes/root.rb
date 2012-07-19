@@ -14,6 +14,10 @@ module Deployments
         end
 
         post "/deployments" do
+          require 'ruby-debug'
+          debugger
+
+
           deployment = Deployment.new(params[:deployment])
           deployment.project = current_project
           deployment.save

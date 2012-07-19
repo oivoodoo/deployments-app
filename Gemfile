@@ -36,6 +36,7 @@ end
 group :development do
   gem 'debugger'
   gem 'heroku'
+  gem 'dm-mysql-adapter'
 end
 
 group :production do
