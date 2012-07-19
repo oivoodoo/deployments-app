@@ -27,7 +27,7 @@ module Deployments
         has n, :commits, :through => Resource
 
         before :create do
-          self.commit_attributes.each do |commit|
+          self.commit_attributes.each do |sha, commit|
             self.commits << Commit.find_by_sha_or_create(commit)
           end
         end
