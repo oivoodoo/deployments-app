@@ -26,7 +26,7 @@ end
 Then /^I should see commits that was deployed to the (staging|production)$/ do |env|
   deployment = Deployment.first(:env => env)
 
-  within("#deployments #deployments_app_models_deployment_#{deployment.id} .commits") do
+  within("#deployments .commits") do
     find('.message').should have_content('Added file')
   end
 end

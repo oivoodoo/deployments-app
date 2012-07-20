@@ -1,6 +1,7 @@
 #projects
-  - @projects.each do |project|
-    %div[project]
-      .name= project.name
-      .api_key= project.api_key
+  %table(class = 'table table-striped')
+    - @projects.each do |project|
+      %tr[project]
+        %td.name= project.name
+        %td.api_key= project.api_key
 
