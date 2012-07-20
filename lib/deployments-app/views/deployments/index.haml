@@ -1,12 +1,15 @@
-#deployments
-  - @deployments.each do |deployment|
-    %div[deployment]
-      .env= deployment.env
-      .host_name= deployment.host_name
-      .author= deployment.author
-      .version= deployment.version
+%h3= current_project.name
 
-      .commits
-        - deployment.commits.each do |commit|
-          .message= commit.message
+#deployments
+  %table(class = 'table table-striped')
+    - @deployments.each do |deployment|
+      %tr[deployment]
+        %td.env= deployment.env
+        %td.host_name= deployment.host_name
+        %td.author= deployment.author
+        %td.version= deployment.version
+
+      - deployment.commits.each do |commit|
+        %tr.commits
+          %td.message(colspan = '4')= commit.message
 

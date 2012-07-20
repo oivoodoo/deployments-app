@@ -7,7 +7,7 @@ GIT
 PATH
   remote: .
   specs:
-    deployments-app (0.0.2)
+    deployments-app (0.0.3)
       datamapper
       haml
       sinatra
