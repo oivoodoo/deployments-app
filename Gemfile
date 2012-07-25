@@ -16,6 +16,7 @@ gem 'dm-validations'
 gem 'dm-types'
 gem 'haml'
 gem 'deployments'
+gem 'rake'
 
 group :test do
   gem 'rspec'

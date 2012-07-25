@@ -18,5 +18,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency('sinatra')
   gem.add_dependency('datamapper')
   gem.add_dependency('haml')
+  gem.add_dependency('rake')
 end
 
