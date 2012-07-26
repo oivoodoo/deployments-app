@@ -7,7 +7,7 @@ GIT
 PATH
   remote: .
   specs:
-    deployments-app (0.0.4)
+    deployments-app (0.0.5)
       datamapper
       haml
       rake
