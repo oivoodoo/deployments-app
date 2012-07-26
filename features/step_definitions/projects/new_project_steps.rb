@@ -29,3 +29,7 @@ Then /^I should see error notification$/ do
   pending # express the regexp above with the code you wish you had
 end
 
+When /^I click on the new project button$/ do
+  click_on "New"
+end
+
