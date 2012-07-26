@@ -1,4 +1,4 @@
-include Deployments::App::Models
+include Deployments::App
 
 Given /^I have already deployed project to the (staging|production)$/ do |env|
   @deployment = create(:deployment_with_commits, :env => env, :project => @project)
@@ -11,7 +11,7 @@ end
 Then /^I should see deployments of (staging|production)$/ do |env|
   deployment = Deployment.first(:env => env)
 
-  within("#deployments #deployments_app_models_deployment_#{deployment.id}") do
+  within("#deployments #deployments_app_deployment_#{deployment.id}") do
     find('.env').should have_content(deployment.env)
     find('.host_name').should have_content(deployment.host_name)
     find('.author').should have_content(deployment.author)

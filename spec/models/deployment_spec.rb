@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-include Deployments::App::Models
+include Deployments::App
 
 describe Deployment do
   it { should validate_presence_of :author }

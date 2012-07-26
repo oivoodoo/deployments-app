@@ -9,7 +9,7 @@ end
 
 Then /^I should see list of projects$/ do
   @projects.each do |project|
-    within("#projects #deployments_app_models_project_#{project.id}") do
+    within("#projects #deployments_app_project_#{project.id}") do
       find('.name').should have_content(project.name)
       find('.api_key').should have_content(project.api_key)
     end

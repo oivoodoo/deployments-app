@@ -2,21 +2,19 @@ require 'uniquify'
 
 module Deployments
   module App
-    module Models
-      class Project
-        include DataMapper::Resource
-        include Uniquify
+    class Project
+      include DataMapper::Resource
+      include Uniquify
 
-        property :id, Serial
+      property :id, Serial
 
-        property :name, String
-        validates_presence_of :name
+      property :name, String
+      validates_presence_of :name
 
-        property :api_key, String
-        uniquify :api_key
+      property :api_key, String
+      uniquify :api_key
 
-        has n, :deployments
-      end
+      has n, :deployments
     end
   end
 end

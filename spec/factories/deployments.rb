@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :deployment, :class => Deployments::App::Models::Deployment do
+  factory :deployment, :class => Deployments::App::Deployment do
     author "Fred Watson"
     env "staging"
     host_name "staging.example.com"

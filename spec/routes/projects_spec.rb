@@ -1,7 +1,7 @@
 require 'spec_helper'
 
+include Deployments::App
 include Deployments::App::Routes
-include Deployments::App::Models
 
 describe Projects do
   context "on viewing projects list" do

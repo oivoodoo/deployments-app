@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 include Deployments::App
-include Deployments::App::Models
 
 describe Server do
   let!(:project) { create(:project) }

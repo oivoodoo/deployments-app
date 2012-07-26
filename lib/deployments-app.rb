@@ -12,18 +12,20 @@ require 'dm-constraints'
 require 'sinatra'
 
 require "deployments-app/version"
-require 'deployments-app/models/commit'
-require 'deployments-app/models/deployment'
-require 'deployments-app/models/project'
-
-require 'deployments-app/routes/authentication'
-require 'deployments-app/routes/root'
-require 'deployments-app/routes/projects'
-require 'deployments-app/routes/extensions'
-
-require 'deployments-app/server'
 
 module Deployments
   module App
+    autoload :Commit,       'deployments-app/models/commit'
+    autoload :Deployment,   'deployments-app/models/deployment'
+    autoload :Project,      'deployments-app/models/project'
+
+    module Routes
+      autoload :Extensions,     'deployments-app/routes/extensions'
+      autoload :Root,           'deployments-app/routes/root'
+      autoload :Projects,       'deployments-app/routes/projects'
+      autoload :Authentication, 'deployments-app/routes/authentication'
+    end
+
+    autoload :Server,     'deployments-app/server'
   end
 end

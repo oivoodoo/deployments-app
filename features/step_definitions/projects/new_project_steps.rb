@@ -1,3 +1,5 @@
+include Deployments::App
+
 Given /^I am on the new project page$/ do
   visit '/projects/new'
 end
@@ -11,7 +13,7 @@ When /^I save changes$/ do
 end
 
 Then /^I should see new project in the list$/ do
-  project = Deployments::App::Models::Project.last
+  project = Project.last
 
   within '#projects' do
     find('.name').should have_content(project.name)

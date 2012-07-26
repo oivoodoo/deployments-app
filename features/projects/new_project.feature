@@ -4,7 +4,9 @@ Feature: New project
   I want to be able to create new project
 
   Background:
-    Given I am on the new project page
+    Given I am on the projects page
+
+    When I click on the new project button
 
   Scenario: New project
     When I fill all required fields
