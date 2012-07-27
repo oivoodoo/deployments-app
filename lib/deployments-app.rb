@@ -13,12 +13,12 @@ require 'sinatra'
 
 require "deployments-app/version"
 
+require 'deployments-app/models/commit'
+require 'deployments-app/models/deployment'
+require 'deployments-app/models/project'
+
 module Deployments
   module App
-    autoload :Commit,       'deployments-app/models/commit'
-    autoload :Deployment,   'deployments-app/models/deployment'
-    autoload :Project,      'deployments-app/models/project'
-
     module Routes
       autoload :Extensions,     'deployments-app/routes/extensions'
       autoload :Root,           'deployments-app/routes/root'
