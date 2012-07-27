@@ -3,6 +3,8 @@
   %table(class = 'table table-striped')
     - @projects.each do |project|
       %tr[project]
-        %td.name= project.name
+        %td.name
+          %a(href = "/deployments?api_key=#{project.api_key}")
+            = project.name
         %td.api_key= project.api_key
 
