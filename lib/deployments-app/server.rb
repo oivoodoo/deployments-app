@@ -13,6 +13,7 @@ module Deployments
 
       configure do
         DataMapper.setup(:default, ENV["DATABASE_URL"] || self.development_db_path)
+        DataMapper.finalize
         DataMapper.auto_upgrade!
       end
     end
